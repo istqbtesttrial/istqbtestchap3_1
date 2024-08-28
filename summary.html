@@ -90,6 +90,8 @@
             feedbackElement.style.color = 'red';
         }
 
+        feedbackElement.scrollIntoView({ behavior: 'smooth' });
+
         if (document.querySelectorAll('#quiz p').length === 8) {  // check if all questions have been answered
             document.getElementById('final-score').textContent = `You scored ${score} out of 4.`;
         }

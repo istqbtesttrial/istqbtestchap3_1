@@ -1,6 +1,7 @@
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9fb;
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -8,49 +9,110 @@ body {
 }
 
 header {
-    background: #333;
+    background: #5D5C61;
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
 nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    background: #444;
+    background: #379683;
     padding: 10px 0;
 }
 
 nav a {
     color: #fff;
-    padding: 10px 15px;
+    padding: 10px 20px;
     text-decoration: none;
     text-transform: uppercase;
+    flex: 1 1 auto;
+    text-align: center;
+    border-radius: 4px;
+    margin: 5px;
 }
 
 nav a:hover {
-    background: #555;
+    background: #557A95;
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    min-height: 100vh; /* Ensures the container takes at least the full height of the viewport */
-    overflow: auto; /* Allows the container to expand as needed to fit all content */
+    min-height: 100vh;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    color: #444;
-    text-align: center;
-}
-
-footer {
-    background: #333;
+/* Buttons */
+button {
+    padding: 12px 20px;
+    margin: 10px 0;
+    font-size: 1em;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 200px; /* Limit max width on larger screens */
+    display: block; /* Ensure buttons stack vertically */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #379683;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #557A95;
+}
+
+h2, h3 {
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    color: #5D5C61;
+}
+
+/* Details and Quiz Sections */
+#technique-details, #testing-details, #feedback-details, #role-details, #quiz {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f0f0f5;
+    border-radius: 8px;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Ensure padding does not increase the width */
+}
+
+/* Feedback text */
+#feedback, #role-impact, #testing-feedback, #feedback-impact, #final-score {
+    color: #379683;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    header {
+        font-size: 1.5em; /* Adjust header size for smaller screens */
+    }
+
+    nav {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    .container {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 15px; /* Smaller padding for smaller screens */
+    }
+
+    #technique-details, #testing-details, #feedback-details, #role-details, #quiz {
+        padding: 15px; /* Adjust padding for better readability */
+        font-size: 1em; /* Ensure text size is appropriate */
+    }
 }
