@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Reviews Matter</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Why Reviews Matter</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="static-testing.html">Static Testing</a>
+    <a href="work-products.html">Work Products</a>
+    <a href="review-techniques.html">Review Techniques</a>
+    <a href="static-vs-dynamic.html">Static vs Dynamic</a>
+    <a href="why-reviews-matter.html">Why Reviews Matter</a>
+    <a href="roles-responsibilities.html">Roles & Responsibilities</a>
+    <a href="summary.html">Summary</a>
+</nav>
+<div class="container">
+    <h2>The Importance of Reviews</h2>
+    <p>Discover the crucial role that reviews play in the software development lifecycle, and how they can prevent costly mistakes.</p>
+
+    <h3>Stakeholder Feedback Simulation</h3>
+    <p>Simulate gathering early feedback from stakeholders and see how it influences project success:</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="gatherFeedback('positive')">Gather Positive Feedback</button>
+        <button onclick="gatherFeedback('negative')">Gather Negative Feedback</button>
+    </div>
+
+    <div id="feedback-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Select a feedback type to see its impact on the project.</p>
+    </div>
+
+    <p id="feedback-impact" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    function gatherFeedback(type) {
+        const feedbackDetails = document.getElementById('feedback-details');
+        const feedbackImpact = document.getElementById('feedback-impact');
+
+        if (type === 'positive') {
+            feedbackDetails.innerHTML = `
+                    <h4>Positive Feedback</h4>
+                    <p>Stakeholders are happy with the current progress. They feel that the product aligns well with their expectations, and they provide constructive suggestions that help refine some features.</p>
+                    <p>Outcome: The team incorporates the suggestions, leading to a product that better meets user needs and increases stakeholder satisfaction.</p>
+                `;
+            feedbackImpact.textContent = 'Positive feedback early in the process helps reinforce the project’s direction and ensures that the product meets stakeholder expectations.';
+        } else if (type === 'negative') {
+            feedbackDetails.innerHTML = `
+                    <h4>Negative Feedback</h4>
+                    <p>Stakeholders express concerns that the product is deviating from their expectations. They identify key areas where the product does not align with the initial requirements, suggesting significant changes.</p>
+                    <p>Outcome: The team must revisit the project plan and make adjustments, which delays the project but ultimately results in a product that better meets stakeholder needs.</p>
+                `;
+            feedbackImpact.textContent = 'Negative feedback, although challenging, is crucial for course correction, preventing costly mistakes later in the project.';
+        } else {
+            feedbackDetails.innerHTML = '<p>Select a feedback type to see its impact on the project.</p>';
+            feedbackImpact.textContent = '';
+        }
+    }
+</script>
+</body>
+</html>

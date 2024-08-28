@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roles & Responsibilities in a Review</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Roles & Responsibilities in a Review</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="static-testing.html">Static Testing</a>
+    <a href="work-products.html">Work Products</a>
+    <a href="review-techniques.html">Review Techniques</a>
+    <a href="static-vs-dynamic.html">Static vs Dynamic</a>
+    <a href="why-reviews-matter.html">Why Reviews Matter</a>
+    <a href="roles-responsibilities.html">Roles & Responsibilities</a>
+    <a href="summary.html">Summary</a>
+</nav>
+<div class="container">
+    <h2>Understanding Review Roles</h2>
+    <p>Learn about the key roles in a formal review process and their responsibilities.</p>
+
+    <h3>Role-Playing Exercise</h3>
+    <p>Take on different roles in a review and experience how each contributes to the process:</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="showRole('manager')">Manager</button>
+        <button onclick="showRole('author')">Author</button>
+        <button onclick="showRole('moderator')">Moderator</button>
+        <button onclick="showRole('scribe')">Scribe</button>
+        <button onclick="showRole('reviewer')">Reviewer</button>
+        <button onclick="showRole('leader')">Review Leader</button>
+    </div>
+
+    <div id="role-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Select a role to see how it contributes to the review process.</p>
+    </div>
+
+    <p id="role-impact" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    function showRole(role) {
+        const roleDetails = document.getElementById('role-details');
+        const roleImpact = document.getElementById('role-impact');
+
+        if (role === 'manager') {
+            roleDetails.innerHTML = `
+                    <h4>Manager</h4>
+                    <p>The manager is responsible for deciding what will be reviewed and providing the necessary resources, including staff and time.</p>
+                    <p><strong>Scenario:</strong> The manager ensures that a critical design document is reviewed before the next phase begins, allocating a team of experienced reviewers to the task.</p>
+                    <p>Impact: By allocating resources effectively, the manager helps ensure that the review is thorough and that any issues are identified and addressed early.</p>
+                `;
+            roleImpact.textContent = 'The manager plays a crucial role in setting the scope and ensuring the review process is adequately supported.';
+        } else if (role === 'author') {
+            roleDetails.innerHTML = `
+                    <h4>Author</h4>
+                    <p>The author is the creator of the work product under review. They must be open to feedback and prepared to make necessary revisions.</p>
+                    <p><strong>Scenario:</strong> The author explains the reasoning behind a complex algorithm during the review, receiving feedback that leads to a simplified and more efficient solution.</p>
+                    <p>Impact: The author’s willingness to engage in the review process leads to improvements in the work product.</p>
+                `;
+            roleImpact.textContent = 'The author’s engagement in the review process is vital for improving the quality of the work product.';
+        } else if (role === 'moderator') {
+            roleDetails.innerHTML = `
+                    <h4>Moderator</h4>
+                    <p>The moderator facilitates the review meeting, ensuring it runs smoothly and that all participants have the opportunity to contribute.</p>
+                    <p><strong>Scenario:</strong> The moderator helps keep the review focused and on track, ensuring that all issues are addressed within the allotted time.</p>
+                    <p>Impact: A good moderator ensures that the review process is efficient and that all relevant issues are discussed.</p>
+                `;
+            roleImpact.textContent = 'The moderator ensures that the review is conducted in a structured and productive manner.';
+        } else if (role === 'scribe') {
+            roleDetails.innerHTML = `
+                    <h4>Scribe</h4>
+                    <p>The scribe records the findings of the review, documenting any defects, decisions, and action items.</p>
+                    <p><strong>Scenario:</strong> The scribe accurately records a critical defect and the agreed-upon solution, ensuring that it is tracked and resolved.</p>
+                    <p>Impact: The scribe’s accurate documentation is essential for ensuring that all issues are addressed after the review.</p>
+                `;
+            roleImpact.textContent = 'The scribe’s role is crucial for maintaining a clear record of the review’s findings and outcomes.';
+        } else if (role === 'reviewer') {
+            roleDetails.innerHTML = `
+                    <h4>Reviewer</h4>
+                    <p>The reviewer examines the work product to identify defects and suggest improvements. Reviewers can be subject matter experts, team members, or other stakeholders.</p>
+                    <p><strong>Scenario:</strong> A reviewer identifies a potential security vulnerability in the code, leading to a discussion and a fix before the product is released.</p>
+                    <p>Impact: Reviewers are key to identifying defects that might otherwise be missed, contributing directly to the quality of the product.</p>
+                `;
+            roleImpact.textContent = 'Reviewers bring diverse perspectives and expertise, making them essential for identifying a wide range of issues.';
+        } else if (role === 'leader') {
+            roleDetails.innerHTML = `
+                    <h4>Review Leader</h4>
+                    <p>The review leader takes overall responsibility for the review process, deciding who will participate and organizing when and where the review will take place.</p>
+                    <p><strong>Scenario:</strong> The review leader selects a diverse team of reviewers to ensure that all aspects of the work product are thoroughly examined.</p>
+                    <p>Impact: The review leader’s decisions influence the effectiveness and thoroughness of the review process.</p>
+                `;
+            roleImpact.textContent = 'The review leader orchestrates the entire review process, ensuring it is well-organized and comprehensive.';
+        } else {
+            roleDetails.innerHTML = '<p>Select a role to see how it contributes to the review process.</p>';
+            roleImpact.textContent = '';
+        }
+    }
+</script>
+</body>
+</html>

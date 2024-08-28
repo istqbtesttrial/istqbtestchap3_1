@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static vs. Dynamic Testing</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Static vs. Dynamic Testing</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="static-testing.html">Static Testing</a>
+    <a href="work-products.html">Work Products</a>
+    <a href="review-techniques.html">Review Techniques</a>
+    <a href="static-vs-dynamic.html">Static vs Dynamic</a>
+    <a href="why-reviews-matter.html">Why Reviews Matter</a>
+    <a href="roles-responsibilities.html">Roles & Responsibilities</a>
+    <a href="summary.html">Summary</a>
+</nav>
+<div class="container">
+    <h2>Comparing Static and Dynamic Testing</h2>
+    <p>Understand the key differences between static and dynamic testing, and how each method helps to identify defects in software development.</p>
+
+    <h3>Comparison Exercise</h3>
+    <p>Explore a scenario where both static and dynamic testing are applied. See how each method uncovers different types of defects:</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="showTesting('static')">Static Testing</button>
+        <button onclick="showTesting('dynamic')">Dynamic Testing</button>
+    </div>
+
+    <div id="testing-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Select a testing method to see how it identifies defects.</p>
+    </div>
+
+    <p id="testing-feedback" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    function showTesting(type) {
+        const testingDetails = document.getElementById('testing-details');
+        const feedback = document.getElementById('testing-feedback');
+
+        if (type === 'static') {
+            testingDetails.innerHTML = `
+                    <h4>Static Testing</h4>
+                    <p>Static testing involves reviewing work products such as requirement specifications, design documents, and code without executing the code. It helps identify defects early in the development process.</p>
+                    <p><strong>Scenario:</strong> During a review of the requirement specification, a static test reveals that the requirements are ambiguous and incomplete, which could lead to misinterpretations during development.</p>
+                    <p>Outcome: The ambiguity is corrected before any code is written, preventing potential defects that could arise from unclear requirements.</p>
+                `;
+            feedback.textContent = 'Static testing excels at catching defects early, especially those related to documentation and design.';
+        } else if (type === 'dynamic') {
+            testingDetails.innerHTML = `
+                    <h4>Dynamic Testing</h4>
+                    <p>Dynamic testing involves executing the code and testing the software during runtime. It helps identify defects related to functionality, performance, and other aspects that are only visible when the software is running.</p>
+                    <p><strong>Scenario:</strong> During dynamic testing, it’s discovered that a particular feature crashes when used under heavy load, which was not identified during static testing.</p>
+                    <p>Outcome: The issue is fixed, ensuring that the software performs correctly under various conditions.</p>
+                `;
+            feedback.textContent = 'Dynamic testing is crucial for identifying defects that only appear when the code is executed, such as performance issues.';
+        } else {
+            testingDetails.innerHTML = '<p>Select a testing method to see how it identifies defects.</p>';
+            feedback.textContent = '';
+        }
+    }
+</script>
+</body>
+</html>

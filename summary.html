@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Summary</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Course Summary</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="static-testing.html">Static Testing</a>
+    <a href="work-products.html">Work Products</a>
+    <a href="review-techniques.html">Review Techniques</a>
+    <a href="static-vs-dynamic.html">Static vs Dynamic</a>
+    <a href="why-reviews-matter.html">Why Reviews Matter</a>
+    <a href="roles-responsibilities.html">Roles & Responsibilities</a>
+    <a href="summary.html">Summary</a>
+</nav>
+<div class="container">
+    <h2>Course Recap and ISTQB Preparation</h2>
+    <p>This summary page recaps all the key points covered in the course and provides final tips for your ISTQB exam preparation.</p>
+
+    <h3>Final Quiz</h3>
+    <p>Test your knowledge with a quiz that covers everything you've learned:</p>
+
+    <div id="quiz">
+        <p><strong>Question 1:</strong> What is the primary purpose of static testing?</p>
+        <button onclick="checkAnswer('q1', 'a')">A) To find defects without executing code</button>
+        <button onclick="checkAnswer('q1', 'b')">B) To find defects during runtime</button>
+        <button onclick="checkAnswer('q1', 'c')">C) To evaluate system performance</button>
+        <p id="q1-feedback" style="color: green;"></p>
+
+        <p><strong>Question 2:</strong> Which role is responsible for moderating the review process?</p>
+        <button onclick="checkAnswer('q2', 'a')">A) Manager</button>
+        <button onclick="checkAnswer('q2', 'b')">B) Moderator</button>
+        <button onclick="checkAnswer('q2', 'c')">C) Scribe</button>
+        <p id="q2-feedback" style="color: green;"></p>
+
+        <p><strong>Question 3:</strong> What is the difference between static and dynamic testing?</p>
+        <button onclick="checkAnswer('q3', 'a')">A) Static testing involves executing code; dynamic testing does not.</button>
+        <button onclick="checkAnswer('q3', 'b')">B) Dynamic testing involves executing code; static testing does not.</button>
+        <button onclick="checkAnswer('q3', 'c')">C) Both involve executing code.</button>
+        <p id="q3-feedback" style="color: green;"></p>
+
+        <p><strong>Question 4:</strong> What is the main advantage of early stakeholder feedback?</p>
+        <button onclick="checkAnswer('q4', 'a')">A) It speeds up the development process.</button>
+        <button onclick="checkAnswer('q4', 'b')">B) It prevents misunderstandings and reduces costly rework.</button>
+        <button onclick="checkAnswer('q4', 'c')">C) It ensures all stakeholders are happy with the final product.</button>
+        <p id="q4-feedback" style="color: green;"></p>
+    </div>
+
+    <p id="final-score" style="color: blue; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    let score = 0;
+
+    function checkAnswer(question, answer) {
+        const feedbackElement = document.getElementById(`${question}-feedback`);
+        let correctAnswer = '';
+
+        switch(question) {
+            case 'q1':
+                correctAnswer = 'a';
+                break;
+            case 'q2':
+                correctAnswer = 'b';
+                break;
+            case 'q3':
+                correctAnswer = 'b';
+                break;
+            case 'q4':
+                correctAnswer = 'b';
+                break;
+        }
+
+        if (answer === correctAnswer) {
+            feedbackElement.textContent = 'Correct!';
+            feedbackElement.style.color = 'green';
+            score += 1;
+        } else {
+            feedbackElement.textContent = 'Incorrect. Try again!';
+            feedbackElement.style.color = 'red';
+        }
+
+        if (document.querySelectorAll('#quiz p').length === 8) {  // check if all questions have been answered
+            document.getElementById('final-score').textContent = `You scored ${score} out of 4.`;
+        }
+    }
+</script>
+</body>
+</html>

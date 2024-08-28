@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Products - Static Testing</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Work Products for Static Testing</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="static-testing.html">Static Testing</a>
+    <a href="work-products.html">Work Products</a>
+    <a href="review-techniques.html">Review Techniques</a>
+    <a href="static-vs-dynamic.html">Static vs Dynamic</a>
+    <a href="why-reviews-matter.html">Why Reviews Matter</a>
+    <a href="roles-responsibilities.html">Roles & Responsibilities</a>
+    <a href="summary.html">Summary</a>
+</nav>
+<div class="container">
+    <h2>Examples of Work Products</h2>
+    <p>Static testing can be applied to a wide variety of work products, including requirement specifications, source code, and test plans.</p>
+
+    <h3>Interactive Review: Identify Issues</h3>
+    <p>Review the following work product description. Highlight any part that you think could be improved or might be a potential issue:</p>
+
+    <div id="work-product-example" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <ul>
+            <li>The database should support storing an unlimited number of user records.</li>
+            <li>Passwords will be encrypted using a simple reversible algorithm for easy recovery.</li>
+            <li>The system must be able to handle up to 100 users logging in simultaneously.</li>
+        </ul>
+    </div>
+
+    <p id="work-product-feedback" style="color: red; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const issues = [
+            { text: 'unlimited number of user records', feedback: 'This might lead to performance issues. Consider setting a reasonable limit.' },
+            { text: 'reversible algorithm', feedback: 'Reversible encryption is not secure for storing passwords.' }
+        ];
+        const feedbackElement = document.getElementById('work-product-feedback');
+
+        document.getElementById('work-product-example').addEventListener('click', function(event) {
+            const clickedText = event.target.textContent;
+            const issue = issues.find(issue => clickedText.includes(issue.text));
+
+            if (issue) {
+                feedbackElement.textContent = issue.feedback;
+            } else {
+                feedbackElement.textContent = 'This is not an issue. Try again!';
+            }
+        });
+    });
+</script>
+</body>
+</html>

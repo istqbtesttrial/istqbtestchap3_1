@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Techniques - Static Testing</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Review Techniques</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="static-testing.html">Static Testing</a>
+    <a href="work-products.html">Work Products</a>
+    <a href="review-techniques.html">Review Techniques</a>
+    <a href="static-vs-dynamic.html">Static vs Dynamic</a>
+    <a href="why-reviews-matter.html">Why Reviews Matter</a>
+    <a href="roles-responsibilities.html">Roles & Responsibilities</a>
+    <a href="summary.html">Summary</a>
+</nav>
+<div class="container">
+    <h2>Formal Review Techniques</h2>
+    <p>In this section, you'll learn about various review techniques such as walkthroughs and inspections. These techniques help ensure that work products meet the required quality standards.</p>
+
+    <h3>Interactive Demonstration: Walkthrough vs. Inspection</h3>
+    <p>Let's explore how different review techniques can uncover defects in a sample document. Select a technique to see it in action:</p>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="showTechnique('walkthrough')">Walkthrough</button>
+        <button onclick="showTechnique('inspection')">Inspection</button>
+    </div>
+
+    <div id="technique-details" style="border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9;">
+        <p>Select a technique to see how it works.</p>
+    </div>
+
+    <p id="feedback" style="color: green; font-weight: bold;"></p>
+</div>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="js/scripts.js"></script>
+<script>
+    function showTechnique(technique) {
+        const techniqueDetails = document.getElementById('technique-details');
+        const feedback = document.getElementById('feedback');
+
+        if (technique === 'walkthrough') {
+            techniqueDetails.innerHTML = `
+                    <h4>Walkthrough</h4>
+                    <p>In a walkthrough, the author of the work product guides the participants through the document, explaining the content and reasoning behind decisions.</p>
+                    <p><strong>Scenario:</strong> During the walkthrough of a requirement document, the author explains a complex algorithm. A participant raises a concern that the algorithm might not scale well for large datasets, leading to a performance issue. This concern is noted for further analysis.</p>
+                    <p>Outcome: The walkthrough helps identify potential performance issues early in the process, allowing the team to address them before implementation.</p>
+                `;
+            feedback.textContent = 'Walkthroughs are excellent for sharing knowledge and catching issues that might be overlooked in individual reviews.';
+        } else if (technique === 'inspection') {
+            techniqueDetails.innerHTML = `
+                    <h4>Inspection</h4>
+                    <p>An inspection is a more formal and structured review technique. Each participant reviews the document individually before the meeting, and during the meeting, they discuss specific issues identified.</p>
+                    <p><strong>Scenario:</strong> During the inspection of a design document, a reviewer notices that a critical security check is missing. This issue is raised and discussed among the team, leading to the addition of the necessary security measures in the design.</p>
+                    <p>Outcome: The inspection uncovers significant defects, such as missing security checks, which could have led to serious vulnerabilities if not caught early.</p>
+                `;
+            feedback.textContent = 'Inspections are highly effective at identifying critical defects, especially those related to security and compliance.';
+        } else {
+            techniqueDetails.innerHTML = '<p>Select a technique to see how it works.</p>';
+            feedback.textContent = '';
+        }
+    }
+</script>
+</body>
+</html>
